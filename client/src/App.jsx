@@ -6,21 +6,20 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <BrowserRouter>
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-
       <div className="flex">
         <Sidebar />
-
         <main className="flex-1 p-6">
-          <h2 className="text-2xl font-semibold">Dashboard</h2>
-
-          <p className="mt-2 text-slate-400">
-            Maritime route risk intelligence
-          </p>
+          <Routes>
+            <Route path="/" element = {<Dashboard />} />
+            <Route path="/route-planner" element={<RoutePlanner />} />
+          </Routes>
         </main>
       </div>
     </div>
+    </BrowserRouter>
   );
 }
 
