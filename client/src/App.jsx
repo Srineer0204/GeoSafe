@@ -3,6 +3,10 @@ import Dashboard from "./pages/Dashboard";
 import RoutePlanner from "./pages/RoutePlanner";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import Shipments from "./pages/Shipments";
+import Alerts from "./pages/Alerts";
+import Simulation from "./pages/Simulation";
+import History from "./pages/History";
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
           <Routes>
             <Route path="/" element = {<Dashboard />} />
             <Route path="/route-planner" element={<RoutePlanner />} />
+            <Route path="/Shipments" element={<Shipments />} />
+            <Route path="/alerts" element={<Alerts />} />
+            <Route path="/simulation" element={<Simulation />} />
+            <Route path="/history" element={<History />} />
           </Routes>
         </main>
       </div>

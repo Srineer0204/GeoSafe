@@ -1,4 +1,4 @@
-import { Link,NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -17,33 +17,60 @@ function Sidebar() {
           Dashboard
         </NavLink>
 
-        <a href="#" className="block px-3 py-2 rounded-lg hover:bg-accent">
+        <NavLink
+          to="/shipments"
+          className={({ isActive }) =>
+            `block px-3 py-2 rounded-lg ${
+              isActive ? "bg-accent text-accent-foreground" : "hover:bg-accent"
+            }`
+          }
+        >
           Shipments
-        </a>
+        </NavLink>
 
-        <NavLink 
-        to="/route-planner"
-        className={({isActive}) => 
-        `block px-3 py-2 rounded-lg ${
-          isActive
-          ? "bg-accent text-accent-foreground"
-          : "hover:bg-accent"
-        }`
-      }
-      >
-        Route Planner
-      </NavLink>
-        <a href="#" className="block px-3 py-2 rounded-lg hover:bg-accent">
+        <NavLink
+          to="/route-planner"
+          className={({ isActive }) =>
+            `block px-3 py-2 rounded-lg ${
+              isActive ? "bg-accent text-accent-foreground" : "hover:bg-accent"
+            }`
+          }
+        >
+          Route Planner
+        </NavLink>
+
+        <NavLink
+          to="/alerts"
+          className={({ isActive }) =>
+            `block px-3 py-2 rounded-lg ${
+              isActive ? "bg-accent text-accent-foreground" : "hover:bg-accent"
+            }`
+          }
+        >
           Alerts
-        </a>
+        </NavLink>
 
-        <a href="#" className="block px-3 py-2 rounded-lg hover:bg-accent">
+        <NavLink
+          to="/simulation"
+          className={({ isActive }) =>
+            `block px-3 py-2 rounded-lg ${
+              isActive ? "bg-accent text-accent-foreground" : "hover:bg-accent"
+            }`
+          }
+        >
           Simulation
-        </a>
+        </NavLink>
 
-        <a href="#" className="block px-3 py-2 rounded-lg hover:bg-accent">
+        <NavLink
+          to="/history"
+          className={({ isActive }) =>
+            `block px-3 py-2 rounded-lg ${
+              isActive ? "bg-accent text-accent-foreground" : "hover:bg-accent"
+            }`
+          }
+        >
           History
-        </a>
+        </NavLink>
       </nav>
     </aside>
   );
