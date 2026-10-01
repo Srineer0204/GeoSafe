@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element = {<Dashboard />} />
             <Route path="/route-planner" element={<RoutePlanner />} />
-            <Route path="/Shipments" element={<Shipments />} />
+            <Route path="/shipments" element={<Shipments />} />
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/simulation" element={<Simulation />} />
             <Route path="/history" element={<History />} />

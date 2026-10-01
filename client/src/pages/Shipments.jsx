@@ -1,5 +1,4 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -35,7 +34,7 @@ export default function Shipments() {
   }
   return (
     <div className="space-y-6">
-      <div className="text-3xl font-bold">
+      <div>
         <Card>
           <CardHeader>
             <CardTitle>Shipment Details</CardTitle>
