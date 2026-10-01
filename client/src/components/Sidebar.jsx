@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar({sidebarOpen}) {
+  if(!sidebarOpen) {
+    return null;
+  }
   return (
     <aside className="w-64 min-h-[calc(100vh-4rem)] border-r border-border p-4">
       <nav className="space-y-2">

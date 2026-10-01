@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 export default function Shipments() {
   const [origin, setOrigin] = useState("");
@@ -20,7 +21,7 @@ export default function Shipments() {
     e.preventDefault();
 
     if (!origin.trim() || !destination.trim() || !cargoType) {
-      alert("Please fill in all shipment details.");
+      toast.error("Please fill in all shipment details.");
       return;
     }
 
@@ -30,7 +31,7 @@ export default function Shipments() {
       cargoType,
     });
 
-    alert("Shipments details captured successfully");
+    toast.success("Shipment details captured successfully");
   }
   return (
     <div className="space-y-6">
