@@ -1,6 +1,6 @@
 const express = require("express");
-
 const router = express.Router();
+const connection = require("../config/db");
 
 router.post("/", (req, res) => {
 
@@ -19,9 +19,23 @@ router.post("/", (req, res) => {
     });
   }
 
-  res.status(201).json({
-    message: "Shipment created successfully",
-    shipment: {origin, destination},
+  const sql = "INSERT INTO shipments (origin,destination) VALUES (?, ?)";
+  
+  connection.query(sql,[origin,destination], (err,results) => {
+    if(err) {
+      console.error("Error creating shipment:", err.message);
+      return res.status(500).json({
+        message: "Failed to create shipment",
+      });
+    }
+    res.status(201).json({
+      message:"Shipment created succesfully",
+      shipment: {
+        id: results.insertId,
+        origin,
+        destination
+      },
+    });
   });
 });
 
