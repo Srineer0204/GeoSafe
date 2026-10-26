@@ -1,12 +1,15 @@
 const express = require("express");
 const shipmentRoutes = require("./routes/shipmentsRoutes");
-
+const usersRoutes = require("./routes/usersRoutes");
 const app = express();
 
 app.use(express.json());
 
 
 app.use("/api/shipments", shipmentRoutes);
+app.use("/api/users", usersRoutes);
+
+
 const PORT = 5000;
 
 app.get("/", (req,res) => {
